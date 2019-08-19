@@ -3,6 +3,7 @@ class CreateDecks < ActiveRecord::Migration[5.2]
     create_table :decks do |t|
       t.string :category
       t.integer :user_id
+      t.integer :score
 
       t.timestamps
     end
