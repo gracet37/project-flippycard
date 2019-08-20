@@ -10,4 +10,16 @@ class CardsController < ApplicationController
         render json: @card, include: [:deck], except: [:created_at, :updated_at]
     end
 
+    def update 
+        card = Card.find(params[:id])
+        card.update(cards_params)
+        render json: card, include: [:deck], except: [:created_at, :updated_at]
+    end
+
+    private
+
+    def cards_params
+        params.require(:card).permit(:english, :foreign, :deck_id, :complete)
+    end
+
 end
