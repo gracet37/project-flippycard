@@ -4,6 +4,7 @@ class CreateDecks < ActiveRecord::Migration[5.2]
       t.string :category
       t.references :user, foreign_key: true
       t.integer :score, default: 0
+      t.string :img_url
 
       t.timestamps
     end

@@ -9,10 +9,11 @@
 
 user_one = User.create(name: "Grace")
 
-chinese = Deck.create(category: "Chinese", user_id: user_one.id, score: 0)
-spanish = Deck.create(category: "Spanish", user_id: user_one.id, score: 0)
-german = Deck.create(category: "German", user_id: user_one.id, score: 0)
-japanese = Deck.create(category: "Japanese", user_id: user_one.id, score: 0)
+chinese = Deck.create(category: "Chinese", user_id: user_one.id, score: 0, img_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJoHyPwDbIHWN2Xr7_ywst2zT2FslWeb7f-IlXshuZrMfsS4_Z")
+spanish = Deck.create(category: "Spanish", user_id: user_one.id, score: 0, img_url: "https://previews.123rf.com/images/steinar14/steinar141703/steinar14170300153/74617655-a-vector-travel-concept-spain-flat-style-colorful-cartoon-illustration-.jpg")
+german = Deck.create(category: "German", user_id: user_one.id, score: 0, img_url: "https://bankkita.com/images/germany-clipart-yellow-9.png")
+japanese = Deck.create(category: "Japanese", user_id: user_one.id, score: 0, img_url: "https://thumbs.dreamstime.com/b/vector-illustration-japanese-language-national-flag-japan-two-hand-drawn-doodle-speech-bubbles-written-name-109521191.jpg")
+
 
 Card.create(english: "Hello", foreign: "你好 (nǐ hǎo)", deck_id: chinese.id, complete: false)
 Card.create(english: "Thank You", foreign: "谢谢 (xiè xie)", deck_id: chinese.id, complete: false)

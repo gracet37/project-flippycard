@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 2019_08_19_153612) do
     t.string "category"
     t.integer "user_id"
     t.integer "score", default: 0
+    t.string "img_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_decks_on_user_id"
