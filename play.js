@@ -55,7 +55,6 @@ const scoreFetch = (id) => {
             renderScore(deck)
     })
 }
-// scoreFetch()
 ////////////////////////// RENDER SCORE ////////////////////////////
 
 const renderScore = (deck) => {
@@ -169,12 +168,15 @@ const renderAllCards = (deck) => {
         completeBtn.addEventListener("click", (event) => {
             event.preventDefault()
             let targetId = event.target.id   // console.log(event.target.id)
+            deck.score += 10
             let p = document.querySelector('p')
             p.innerHTML = " 🌟 Great Work! 🌟"
             setTimeout(function(){
                 p.innerHTML = '';
             }, 2000);
-            
+
+            // try {
+            // const score = await 
             fetch(`http://localhost:3000/decks/${deck.id}`, {
                 method: "PATCH",
                 headers: {
@@ -182,26 +184,37 @@ const renderAllCards = (deck) => {
                     "Accept": 'application/json'
                 },
                 body: JSON.stringify({
-                    score: deck.score+10
+                    score: deck.score
                 })
             })
+            // .then(res => res.json())
+            // .then(console.log)
+            .then(data => {
+                document.querySelector('.score').innerText = deck.score
+                // scoreFetch(deck)
+                console.log(deck.score)
+            })
+            
+
+
             // .then(res => res.json()).then(data => {
-                // document.querySelector('h1').innerHTML = " "
-                // scoreFetch(data)
+            //     document.querySelector('h1').innerHTML = " "
+            //     scoreFetch(data)
             // })
         
             // event.target.parentNode.parentNode.parentNode.style.display = "none"
             
-            fetch(`http://localhost:3000/cards/${targetId}`, {
-                method: "PATCH",
-                headers: {
-                    "Content-Type": 'application/json',
-                    "Accept": 'application/json'
-                },
-                body: JSON.stringify({
-                    complete: true
-                })
-            })
+            // const complete = await fetch(`http://localhost:3000/cards/${targetId}`, {
+            //     method: "PATCH",
+            //     headers: {
+            //         "Content-Type": 'application/json',
+            //         "Accept": 'application/json'
+            //     },
+            //     body: JSON.stringify({
+            //         complete: true
+            //     })
+            // })
+        // } catch (err) {console.error(err)}
         })
     })
 }
