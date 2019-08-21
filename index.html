@@ -10,39 +10,53 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
   </head>
-  <body>
+  <body class="body">
+      <div class="navbar">
+        <strong>Your Languages: </strong>
+
+      </div>
       <div class="nav-bar">
       </div>
-      <br>
-      <br>
-      <br>
-      <div class="top-bar">
-      </div>
-      <div class="score">
-      </div>
-    <!-- page content -->
-      <div id="homepage">
-      </div>
-      <br>
-      <div class="container" style="display: none;">
-        <form class="add-card" style="">
-          <h3>Create New Cards!</h3>
-            <input type="text" name="english" value="" placeholder="Enter English word..." class="input-text">
+      <main>
+          <!-- page content -->
+          <div id="first-container">
+          </div>
+          <br>
+          <div id='second-container'>
+            <div class="score">
+            </div>
+            <div class="form-container" style="display: none;">
+                <form class="add-card">
+                  <h3>Create New Cards!</h3>
+                  <select name="Language" class="lang-selector">
+                  </select>
+                  <br>
+                  <input type="text" name="english" value="" placeholder="Enter English word..." class="input-text">
+                  <br>
+                  <input type="text" name="foreign" value="" placeholder="Enter translated word..." class="input-text">
+                  <br>
+                  <input type="submit" name="submit" value="Create new card" class="submit">
+                </form>
+            </div>
             <br>
-            <input type="text" name="foreign" value="" placeholder="Enter translated word..." class="input-text">
-            <br>
-            <input type="submit" name="submit" value="Create new card" class="submit">
-        </form>
-      </div>
-      <br>
+            <div class="top-bar">
+            </div>
+            <div class="container">
 
-      <div class="wrapper">
-      </div>
+            </div>
+            <br>
+            <div class="home-wrapper">
+            </div>
+            <div class="wrapper">
+            </div>
+          </div>
+      </main>
       <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   </body>
   
-<!-- <script src="homepage.js" defer></script> -->
+<script src="homepage.js" defer></script>
+<!-- <script src="create.js" defer></script> -->
 <script src="play.js" defer></script>
 </html>
