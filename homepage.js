@@ -5,7 +5,7 @@ const DECK_URL = "http://localhost:3000/decks"
 const CARDS_URL = "http://localhost:3000/cards"
 const firstContainer = document.getElementById('first-container')
 const secondContainer = document.getElementById('second-container')
-
+const headerDiv = document.getElementById('header-div')
 
 ///////////// FETCH A USERS DECK /////////////////
 
@@ -18,11 +18,9 @@ fetch('http://localhost:3000/users')
 ///////////// RENDER THE PAGE AFTER USER SELECTS THEIR LANGUAGE  ///////////////
 
 const renderDeckPage = (deck) => {
-    const mainDiv = document.createElement('div')
+    
     const h1 = document.createElement('h1')
     h1.innerHTML = `Learn ${deck.category}`
-    mainDiv.appendChild(h1)
-
     // const playButton = document.createElement('button')
     // playButton.id = deck.id
     // playButton.className = 'button-play'
@@ -51,9 +49,8 @@ const renderDeckPage = (deck) => {
     createButton.innerHTML = `<span>Create New Cards</span>`
     showCardContainer(createButton)
     
-    mainDiv.appendChild(createButton)
-    firstContainer.appendChild(mainDiv)
-
+    headerDiv.prepend(h1, createButton)
+    secondContainer.prepend(headerDiv)
 }
 
 ///////////// ADD NEW CARD FETCH POST //////////////
@@ -76,7 +73,7 @@ const addNewCard = (deck) => {
           complete: false
         })
     })
-    .then(res => res.json())
+    // .then(res => res.json())
 }
 
 
@@ -91,13 +88,16 @@ const renderAllDecks = (user) => {
         button.innerText = deck.category
         
         button.addEventListener("click", (e) => {
-            console.log(button)
+            // console.log(button)
             event.preventDefault()
-            firstContainer.innerHTML = " "
+            document.querySelector('.top-bar').innerHTML = " "
+            document.querySelector('#header-div').innerHTML = " "
+            document.querySelector('.score').innerHTML = " "
+            document.querySelector('.wrapper').innerHTML = " "
             options(deck)
             renderDeckPage(deck)
+            scoreFetch(deck.id)
             allFetch(deck.id)
-            // secondContainer.innerHTML = " "
         })
 
         navB.append(button)
@@ -115,6 +115,7 @@ const renderAllDecks = (user) => {
         deckDiv.addEventListener("click", (event) => {
             event.preventDefault()
             firstContainer.innerHTML = " "
+            scoreFetch(deck.id)
             options(deck)
             renderDeckPage(deck)
             allFetch(deck.id)
@@ -142,7 +143,6 @@ const showCardContainer = (createButton) => {
     })
 }
 
-
 const newCardForm = document.querySelector('form.add-card')
 
 const langDropDown = document.querySelector('.lang-selector')
@@ -162,8 +162,6 @@ const displayLangs = (decks) => {
         langDropDown.append(langId)
     })
 }
-
-
 
 newCardForm.addEventListener('submit', (event)=>{
     event.preventDefault()
@@ -193,5 +191,4 @@ newCardForm.addEventListener('submit', (event)=>{
 
 
 ////////////// FUNCTION CALLS ////////////////
-getLangs()
 fetchData()
