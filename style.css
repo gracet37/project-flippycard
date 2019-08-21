@@ -1,19 +1,26 @@
 /* Play page boxes */
 
-/* body {
-    margin: 40px;
-    background: #F17563;
-    font-family: Open Sans;
-    font-size: 25px;
-  	color: #222;
-} */
+.body {
+  background-color: lightblue;
+}
 
 .wrapper {
     display: grid;
-    grid-template-columns: 33% 33% 33%;
-    grid-gap: 10px;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-gap: 20px;
     color: #444;
+    margin: 30px;
 }
+
+#first-container {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-gap: 20px;
+  color: #444;
+  margin: 30px;
+}
+
+
 
 /* .box {
     background-color: #444;
@@ -88,10 +95,16 @@ p {
 /* CARDS */
 
 .card {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-gap: 20px;
+    color: #444;
+    margin: 30px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
-    width: 40%;
+    width: 30%;
 }
+
   
 .card:hover {
 box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
@@ -101,52 +114,13 @@ box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 padding: 2px 16px;
 }
 
-.button-play {
-    border-radius: 4px;
-    background-color:  #33cc00;
-    border: none;
-    color: #FFFFFF;
-    text-align: center;
-    font-size: 28px;
-    padding: 20px;
-    width: 200px;
-    transition: all 0.5s;
-    cursor: pointer;
-    margin: 5px;
-  }
-  
-  .button-play span {
-    cursor: pointer;
-    display: inline-block;
-    position: relative;
-    transition: 0.5s;
-  }
-  
-  .button-play span:after {
-    content: '\00bb';
-    position: absolute;
-    opacity: 0;
-    top: 0;
-    right: -20px;
-    transition: 0.5s;
-  }
-  
-  .button-play:hover span {
-    padding-right: 25px;
-  }
-  
-  .button-play:hover span:after {
-    opacity: 1;
-    right: 0;
-  }
-
-  .button-change {
+  .button-home {
     border-radius: 4px;
     background-color: #66ccff;
     border: none;
     color: #FFFFFF;
     text-align: center;
-    font-size: 28px;
+    font-size: 20px;
     padding: 20px;
     width: 200px;
     transition: all 0.5s;
@@ -154,14 +128,14 @@ padding: 2px 16px;
     margin: 5px;
   }
   
-  .button-change span {
+  .button-home span {
     cursor: pointer;
     display: inline-block;
     position: relative;
     transition: 0.5s;
   }
   
-  .button-change span:after {
+  .button-home span:after {
     content: '\00bb';
     position: absolute;
     opacity: 0;
@@ -170,11 +144,11 @@ padding: 2px 16px;
     transition: 0.5s;
   }
   
-  .button-change:hover span {
+  .button-home:hover span {
     padding-right: 25px;
   }
   
-  .button-change:hover span:after {
+  .button-home:hover span:after {
     opacity: 1;
     right: 0;
   }
@@ -185,7 +159,7 @@ padding: 2px 16px;
     border: none;
     color: #FFFFFF;
     text-align: center;
-    font-size: 28px;
+    font-size: 20px;
     padding: 20px;
     width: 200px;
     transition: all 0.5s;
@@ -218,109 +192,20 @@ padding: 2px 16px;
     right: 0;
   }
 
- /* CARD  */
 
-/* div.card {
-    background-color: #eeeeee;
-    height: 250px;
-    width: 300px;
-    box-shadow: 10px 10px grey;
-    padding: 10px;
-    border-radius: 10px;
-  } */
-/* FLIP CARD*/
-/* 
-@import url(https://fonts.googleapis.com/css?family=Open+Sans);
 
-body {
-    background: #F17563;
-    font-family: Open Sans;
-    font-size: 50px;
-  	color: #222;
+.button {
+  background-color: #ddd;
+  border: none;
+  color: black;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 16px;
 }
 
-label {
-    -webkit-perspective: 1000px;
-    perspective: 1000px;
-    -webkit-transform-style: preserve-3d;
-    transform-style: preserve-3d;
-    display: block;
-    width: 300px;
-    height: 200px;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    cursor: pointer;
-}
 
-.flip-card {
-    position: relative;
-    height: 100%;
-    width: 100%;
-    -webkit-transform-style: preserve-3d;
-    transform-style: preserve-3d;
-    -webkit-transition: all 600ms;
-    transition: all 600ms;
-    z-index: 20;
-}
 
-    .flip-card div {
-        position: absolute;
-        height: 100%;
-        width: 100%;
-        background: #FFF;
-        text-align: center;
-        line-height: 200px;
-        -webkit-backface-visibility: hidden;
-        backface-visibility: hidden;
-        border-radius: 2px;
-    }
-
-    .flip-card .back {
-        background: #222;
-        color: #FFF;
-        -webkit-transform: rotateX(180deg);
-        transform: rotateX(180deg);
-    }
-
-label:hover .flip-card {
-    -webkit-transform: rotateX(20deg);
-    transform: rotateX(20deg);
-    box-shadow: 0 20px 20px rgba(50,50,50,.2);
-}
-
-input {
-    display: none;
-}
-
-:checked + .flip-card {
-    transform: rotateX(180deg);
-    -webkit-transform: rotateX(180deg);
-}
-
-label:hover :checked + .flip-card {
-    transform: rotateX(160deg);
-    -webkit-transform: rotateX(160deg);
-    box-shadow: 0 20px 20px rgba(255,255,255,.2);
-} */
-
-/* GRIDS FOR THE PLAY CARDS (taken from Pokemon) */
-/* main {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
-    grid-gap: 20px;
-    padding-top: 10px;
-    padding-bottom: 30px;
-  }
-  
-  div.grid-card {
-    background-color: #eeeeee;
-    height: 250px;
-    width: 300px;
-    box-shadow: 10px 10px grey;
-    padding: 10px;
-    border-radius: 10px;
-  } */
