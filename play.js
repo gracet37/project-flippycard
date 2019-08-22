@@ -3,6 +3,8 @@
 // 1. Fetch all the cards from the deck
 const options = (deck) => {
     const topBar = document.querySelector(".top-bar")
+    const midBar = document.querySelector(".mid-bar")
+
 
     const incBtn = document.createElement('button')
     incBtn.className = "mx-auto btn btn-primary btn-lg"
@@ -22,6 +24,17 @@ const options = (deck) => {
         document.querySelector('.wrapper').innerText = " "
         allFetch(deck.id)
     })
+
+    const createButton = document.createElement('button')
+    createButton.className = 'button-create'
+    createButton.id = deck.id
+    createButton.innerHTML = `<span>Create New Cards</span>`
+    showCardContainer(createButton)
+
+    midBar.append(createButton)
+
+
+
 }
 
 ////// ????? Need help - how to interlink this with the items defined in homepage.js ??????????????????????
@@ -57,13 +70,15 @@ const scoreFetch = (id) => {
 }
 ////////////////////////// RENDER SCORE ////////////////////////////
 
-const renderScore = (deck) => {
-    const h1 = document.createElement('h1')
-    h1.innerText = `Score: ${deck.score}`
-    const score = document.querySelector(".score")
-    const p = document.createElement('p')
-    score.append(h1, p)
-}
+// const renderScore = (deck) => {
+//     const h1 = document.createElement('h1')
+//     h1.innerText = `Score: ${deck.score}`
+//     const score = document.querySelector(".score")
+//     const p = document.createElement('p')
+//     score.append(h1, p)
+//     const headerDiv = document.querySelector("#header-div")
+//     headerDiv.appendChild(score)
+// }
 ///////////////// UPDATE SCORE////////////////////////////////
 
 function isIncomplete(card) {
@@ -137,7 +152,6 @@ const renderAllCards = (deck) => {
                                 <div class="flip-card-back" id="rcorners1">
                                     <h1>${card.english}</h1> 
                                     <button type="button" class="complete-button" id=${card.id}>Got it!</button>
-                                    <button type="button" class="edit-button" id=${card.id}>Edit</button>
                                     <button type="button" class="delete-button" id=${card.id}>Delete</button> 
                                 </div>
                                 </div>
@@ -190,19 +204,16 @@ const renderAllCards = (deck) => {
             // .then(res => res.json())
             // .then(console.log)
             .then(data => {
-                document.querySelector('.score').innerText = deck.score
-                // scoreFetch(deck)
-                console.log(deck.score)
+                document.querySelector('.score').innerHTML = `<h1>Score: ${deck.score}</h1>`
+
             })
             
-
-
             // .then(res => res.json()).then(data => {
             //     document.querySelector('h1').innerHTML = " "
             //     scoreFetch(data)
             // })
         
-            // event.target.parentNode.parentNode.parentNode.style.display = "none"
+            event.target.parentNode.parentNode.parentNode.style.display = "none"
             
             // const complete = await fetch(`http://localhost:3000/cards/${targetId}`, {
             //     method: "PATCH",
@@ -214,7 +225,7 @@ const renderAllCards = (deck) => {
             //         complete: true
             //     })
             // })
-        // } catch (err) {console.error(err)}
+            // catch (err) {console.error(err)}
         })
     })
 }
