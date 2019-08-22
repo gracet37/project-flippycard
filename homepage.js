@@ -6,6 +6,12 @@ const CARDS_URL = "http://localhost:3000/cards"
 const firstContainer = document.getElementById('first-container')
 const secondContainer = document.getElementById('second-container')
 const headerDiv = document.getElementById('header-div')
+const learn = document.querySelector('.learn')
+const topBar = document.querySelector('.top-bar')
+const wrapper = document.querySelector('.wrapper')
+
+
+
 
 ///////////// FETCH A USERS DECK /////////////////
 
@@ -17,10 +23,28 @@ fetch('http://localhost:3000/users')
 
 ///////////// RENDER THE PAGE AFTER USER SELECTS THEIR LANGUAGE  ///////////////
 
-const renderDeckPage = (deck) => {
-    
+const renderHeader = (deck) => {
+    // const headerDiv = document.createElement('div')
+    // headerDiv.id = 'header-div'
     const h1 = document.createElement('h1')
+    h1.className = 'learn clear'
     h1.innerHTML = `Learn ${deck.category}`
+    
+    const scoreDiv = document.createElement('div')
+    const h2 = document.createElement('h2')
+    h2.className = 'score clear'
+    h2.innerHTML = `Score: ${deck.score}`
+    // const score = document.querySelector(".score")
+    const p = document.createElement('p')
+    scoreDiv.append(h2, p)
+    // const headerDiv = document.querySelector("#header-div")
+    // headerDiv.appendChild(score)
+
+    headerDiv.append(h1, scoreDiv)
+
+
+}
+
     // const playButton = document.createElement('button')
     // playButton.id = deck.id
     // playButton.className = 'button-play'
@@ -43,15 +67,6 @@ const renderDeckPage = (deck) => {
     // })
 
 
-    const createButton = document.createElement('button')
-    createButton.className = 'button-create'
-    createButton.id = deck.id
-    createButton.innerHTML = `<span>Create New Cards</span>`
-    showCardContainer(createButton)
-    
-    headerDiv.prepend(h1, createButton)
-    secondContainer.prepend(headerDiv)
-}
 
 ///////////// ADD NEW CARD FETCH POST //////////////
 
@@ -73,7 +88,7 @@ const addNewCard = (deck) => {
           complete: false
         })
     })
-    // .then(res => res.json())
+    .then(res => res.json())
 }
 
 
@@ -88,16 +103,17 @@ const renderAllDecks = (user) => {
         button.innerText = deck.category
         
         button.addEventListener("click", (e) => {
-            // console.log(button)
+            console.log(button)
             event.preventDefault()
-            document.querySelector('.top-bar').innerHTML = " "
-            document.querySelector('#header-div').innerHTML = " "
-            document.querySelector('.score').innerHTML = " "
-            document.querySelector('.wrapper').innerHTML = " "
+            firstContainer.innerHTML = " "
+            headerDiv.innerHTML = " "
+            topBar.innerHTML = " "
+            wrapper.innerHTML = " "
+            renderHeader(deck)
             options(deck)
-            renderDeckPage(deck)
-            scoreFetch(deck.id)
+            // renderScore(deck)
             allFetch(deck.id)
+            // secondContainer.innerHTML = " "
         })
 
         navB.append(button)
@@ -115,9 +131,8 @@ const renderAllDecks = (user) => {
         deckDiv.addEventListener("click", (event) => {
             event.preventDefault()
             firstContainer.innerHTML = " "
-            scoreFetch(deck.id)
             options(deck)
-            renderDeckPage(deck)
+            renderHeader(deck)
             allFetch(deck.id)
         })
     })
@@ -143,6 +158,7 @@ const showCardContainer = (createButton) => {
     })
 }
 
+
 const newCardForm = document.querySelector('form.add-card')
 
 const langDropDown = document.querySelector('.lang-selector')
@@ -162,6 +178,8 @@ const displayLangs = (decks) => {
         langDropDown.append(langId)
     })
 }
+
+
 
 newCardForm.addEventListener('submit', (event)=>{
     event.preventDefault()
@@ -191,4 +209,5 @@ newCardForm.addEventListener('submit', (event)=>{
 
 
 ////////////// FUNCTION CALLS ////////////////
+getLangs()
 fetchData()
