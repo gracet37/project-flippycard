@@ -12,7 +12,7 @@
   </head>
   <body class="body">
       <div class="navbar">
-        <strong>Your Languages: </strong>
+        <h2 class="navHead">Your Languages: </h2>
 
       </div>
       <main>
@@ -38,8 +38,8 @@
                 <p>
                 </p>
             </div>
-            <div class="form-container" style="display: none;">
-                <form class="add-card">
+            <div class="form-container form-group" style="display: none;">
+                <!-- <form class="add-card">
                   <h3>Create New Cards!</h3>
                   <select name="Language" class="lang-selector">
                   </select>
@@ -49,8 +49,23 @@
                   <input type="text" name="foreign" value="" placeholder="Enter translated word..." class="input-text">
                   <br>
                   <input type="submit" name="submit" value="Create new card" class="submit">
+                </form> -->
+              
+                  <form class="add-card">
+                    <h3>Create A New Card!</h3>
+                    <label for="fenglish">English Word</label>
+                    <input type="text" id="english" name="english" placeholder="Enter English Word.." class="input-text">
+                
+                    <label for="lforeign">Foreign Word</label>
+                    <input type="text" id="foreign" name="foreign" placeholder="Enter Translated Word..">
+                
+                    <label for="country">Language</label>
+                    <select class="lang-selector" name="Language">
+                    </select>
+                  
+                    <input type="submit" value="Create Card" name="submit" style="background-color:#FFD700">
                 </form>
-            </div>
+              </div>
             <div class="container">
 
             </div>
