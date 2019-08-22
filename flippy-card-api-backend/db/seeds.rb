@@ -9,12 +9,15 @@
 
 user_one = User.create(name: "Grace")
 
-chinese = Deck.create(category: "Chinese", user_id: user_one.id, score: 0, img_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJoHyPwDbIHWN2Xr7_ywst2zT2FslWeb7f-IlXshuZrMfsS4_Z"
+chinese = Deck.create(category: "Chinese", user_id: user_one.id, score: 0, img_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJoHyPwDbIHWN2Xr7_ywst2zT2FslWeb7f-IlXshuZrMfsS4_Z")
 spanish = Deck.create(category: "Spanish", user_id: user_one.id, score: 0, img_url: "https://previews.123rf.com/images/steinar14/steinar141703/steinar14170300153/74617655-a-vector-travel-concept-spain-flat-style-colorful-cartoon-illustration-.jpg")
-german = Deck.create(category: "German", user_id: user_one.id, score: 0, img_url: "images/german.png"
-french = Deck.create(category: "French", user_id: user_one.id, score: 0, img_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-2yMEbfWBIH_CS1a5CTJv-Y9G7HjoxFz-wH0NXmn61dH7tQdk")
+german = Deck.create(category: "German", user_id: user_one.id, score: 0, img_url: "https://media.istockphoto.com/vectors/cartoon-character-saying-hello-and-welcome-in-german-vector-id624129918")
+french = Deck.create(category: "French", user_id: user_one.id, score: 0, img_url: "https://media.istockphoto.com/vectors/cartoon-character-saying-hello-and-welcome-in-french-vector-id624129804")
+japanese = Deck.create(category: "Japanese", user_id: user_one.id, score: 0, img_url: "https://thumbs.dreamstime.com/b/vector-illustration-japanese-language-national-flag-japan-two-hand-drawn-doodle-speech-bubbles-written-name-109521191.jpg")
 maori = Deck.create(category: "Maori", user_id: user_one.id, score: 0, img_url: "https://thumbs.dreamstime.com/z/vector-illustration-cartoon-character-saying-hello-welcome-maori-vector-illustration-cartoon-character-saying-hello-117720184.jpg")
-romanian = Deck.create(category: "Romanian", user_id: user_one.id, score: 0, img_url: "https://image.shutterstock.com/image-vector/romanian-typical-clothing-heart-260nw-351250343.jpg")
+romanian = Deck.create(category: "Romanian", user_id: user_one.id, score: 0, img_url: "https://st4.depositphotos.com/5966606/19761/v/1600/depositphotos_197616634-stock-illustration-vector-illustration-cartoon-character-saying.jpg")
+nzslang = Deck.create(category: "Bonus: NZ Slang", user_id: user_one.id, score: 0, img_url: "https://rlv.zcache.co.nz/yeah_nah_new_zealand_slang_t_shirt-rd29743e506de47e1bef61002343c49b2_65yeg_307.jpg?rvtype=content")
+
 
 
 Card.create(english: "Hello", foreign: "你好 (nǐ hǎo)", deck_id: chinese.id, complete: false)
@@ -156,3 +159,23 @@ Card.create(english: "I'm Sorry", foreign: "Îmi pare rău!	", deck_id: romanian
 Card.create(english: "One moment please", foreign: "Un moment, vă rog.", deck_id: romanian.id, complete: false)
 Card.create(english: "Thank you", foreign: "Mulțumesc", deck_id: romanian.id, complete: false)
 Card.create(english: "Good Day", foreign: "Bună ziua", deck_id: romanian.id, complete: false)
+
+Card.create(english: "Add on to any sentence for emphasis", foreign: "Eh", deck_id: nzslang.id, complete: false)
+Card.create(english: "Yes, but no. “Do you want a vanilla ice cream? “Yeah nah, I’ll be right.”", foreign: "Yeah nah", deck_id: nzslang.id, complete: false)
+Card.create(english: "Not much", foreign: "Bugger All", deck_id: nzslang.id, complete: false)
+Card.create(english: "Thanks", foreign: "Chur", deck_id: nzslang.id, complete: false)
+Card.create(english: "Middle of nowhere", foreign: "The wops", deck_id: nzslang.id, complete: false)
+Card.create(english: "When something is disfigured", foreign: "Munted", deck_id: nzslang.id, complete: false)
+Card.create(english: "Dodgey", foreign: "Sus", deck_id: nzslang.id, complete: false)
+Card.create(english: "Too Easy", foreign: "Piece of Piss", deck_id: nzslang.id, complete: false)
+Card.create(english: "Disappointment", foreign: "Stink One", deck_id: nzslang.id, complete: false)
+Card.create(english: "Down to do something", foreign: "Keen", deck_id: nzslang.id, complete: false)
+Card.create(english: "Flip-Flops", foreign: "Jandals", deck_id: nzslang.id, complete: false)
+Card.create(english: "When someone looks cool or trendy", foreign: "Skux", deck_id: nzslang.id, complete: false)
+Card.create(english: "An insult to someone", foreign: "Egg", deck_id: nzslang.id, complete: false)
+Card.create(english: "Too much – “I got you a pie” “Too much bro”", foreign: "Tu Meke", deck_id: nzslang.id, complete: false)
+Card.create(english: "I got this lollipop for free!” “That’s mean as!", foreign: "Mean as", deck_id: nzslang.id, complete: false)
+Card.create(english: "McDonalds", foreign: "Maccas", deck_id: nzslang.id, complete: false)
+Card.create(english: "Get beat up - Wanna Hiding Bro", foreign: "Wanna hiding", deck_id: nzslang.id, complete: false)
+Card.create(english: "Thanks", foreign: "Ta", deck_id: nzslang.id, complete: false)
+Card.create(english: "Used when you agree with someone - hard out bro", foreign: "Hard Out", deck_id: nzslang.id, complete: false)
