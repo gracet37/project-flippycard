@@ -9,6 +9,7 @@ const headerDiv = document.getElementById('header-div')
 const learn = document.querySelector('.learn')
 const topBar = document.querySelector('.top-bar')
 const wrapper = document.querySelector('.wrapper')
+const midBar = document.querySelector('.mid-bar')
 
 
 
@@ -103,12 +104,24 @@ const renderAllDecks = (user) => {
         button.innerText = deck.category
         
         button.addEventListener("click", (e) => {
-            console.log(button)
+            // console.log(button)
             event.preventDefault()
+            // const buttons = document.getElementsByClassName('button')
+            // buttons.className = 'button'
+            // button.style.backgroundColor = "#EDEAE5"
+            let arr = []
+            e.target.className = 'color-button'
+            arr.forEach.call(document.querySelectorAll('button'), function(b) {
+                if (b !== e.target) {
+                    b.className = 'button'
+                }
+            })
+            // e.target.className = 'color-button'
             firstContainer.innerHTML = " "
             headerDiv.innerHTML = " "
             topBar.innerHTML = " "
             wrapper.innerHTML = " "
+            midBar.innerHTML = " "
             renderHeader(deck)
             options(deck)
             // renderScore(deck)
@@ -121,10 +134,8 @@ const renderAllDecks = (user) => {
         const deckDiv = document.createElement('div')
         deckDiv.innerHTML = 
             `<div class="card">
-                <img src="${deck.img_url}" alt="Avatar" id="deck${deck.id}" style="width:100%">
-                    <div class="container">
-                    <h4><b>${deck.category}</b></h4> 
-                    </div>
+                <h3><b>${deck.category}</b></h3> 
+                <img class="deck-card" src="${deck.img_url}" alt="Avatar" id="deck${deck.id}">
             </div>`
         firstContainer.appendChild(deckDiv)
 
@@ -209,5 +220,5 @@ newCardForm.addEventListener('submit', (event)=>{
 
 
 ////////////// FUNCTION CALLS ////////////////
-getLangs()
+// getLangs()
 fetchData()

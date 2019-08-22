@@ -7,10 +7,10 @@ const options = (deck) => {
 
 
     const incBtn = document.createElement('button')
-    incBtn.className = "mx-auto btn btn-primary btn-lg"
+    incBtn.className = "button-inc"
     incBtn.innerText = "Cards To Practice"
     const allBtn = document.createElement('button')
-    allBtn.className = "mx-auto btn btn-secondary btn-lg"
+    allBtn.className = "button-all"
     allBtn.innerText = "All Cards"
 
     topBar.append(allBtn, incBtn)
@@ -111,6 +111,7 @@ const renderIncomplete = (cards) => {
                                 <div class="flip-card-back" id="rcorners1">
                                     <h1>${card.english}</h1> 
                                     <button type="button" class="complete-button" id=${card.id}>Got it!</button> 
+                                    <button type="button" class="delete-button" id=${card.id}>Delete</button> 
                                 </div>
                                 </div>
                             </div>`
@@ -204,7 +205,7 @@ const renderAllCards = (deck) => {
             // .then(res => res.json())
             // .then(console.log)
             .then(data => {
-                document.querySelector('.score').innerHTML = `<h1>Score: ${deck.score}</h1>`
+                document.querySelector('.score').innerHTML = `<h2>Score: ${deck.score}</h2>`
 
             })
             
