@@ -106,10 +106,10 @@ const renderIncomplete = (cards) => {
         playDiv.innerHTML = `<div class="flip-card">
                                 <div class="flip-card-inner">
                                 <div class="flip-card-front" id="rcorners1">
-                                     <h1>${card.foreign}</h1> 
+                                     <h4>${card.foreign}</h4> 
                                 </div>
                                 <div class="flip-card-back" id="rcorners1">
-                                    <h1>${card.english}</h1> 
+                                    <h4>${card.english}</h4> 
                                     <button type="button" class="complete-button" id=${card.id}>Got it!</button> 
                                     <button type="button" class="delete-button" id=${card.id}>Delete</button> 
                                 </div>
@@ -148,10 +148,10 @@ const renderAllCards = (deck) => {
         playDiv.innerHTML = `<div class="flip-card">
                                 <div class="flip-card-inner">
                                 <div class="flip-card-front" id="rcorners1">
-                                     <h1>${card.foreign}</h1> 
+                                     <h4 class="flip-front-text">${card.foreign}</h4> 
                                 </div>
                                 <div class="flip-card-back" id="rcorners1">
-                                    <h1>${card.english}</h1> 
+                                    <h4 class="flip-back-text">${card.english}</h4> 
                                     <button type="button" class="complete-button" id=${card.id}>Got it!</button>
                                     <button type="button" class="delete-button" id=${card.id}>Delete</button> 
                                 </div>

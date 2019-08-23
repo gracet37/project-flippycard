@@ -11,9 +11,6 @@ const topBar = document.querySelector('.top-bar')
 const wrapper = document.querySelector('.wrapper')
 const midBar = document.querySelector('.mid-bar')
 
-
-
-
 ///////////// FETCH A USERS DECK /////////////////
 
 const fetchData = () => {
@@ -29,7 +26,8 @@ const renderHeader = (deck) => {
     // headerDiv.id = 'header-div'
     const h1 = document.createElement('h1')
     h1.className = 'learn clear'
-    h1.innerHTML = `Learn ${deck.category}`
+    // h1.className = "magic"
+    h1.innerHTML = `<span contenteditable data-heading="Magic" class="lang-span">${deck.category.toUpperCase()}</span>`
     
     const scoreDiv = document.createElement('div')
     const h2 = document.createElement('h2')
@@ -92,6 +90,17 @@ const addNewCard = (deck) => {
     .then(res => res.json())
 }
 
+// const x = () => {
+// var span = document.querySelector("span");
+
+// span.addEventListener("input", function() {
+// 	var text = this.innerText;
+// 	this.setAttribute("data-heading", text);
+// 	this.parentElement.setAttribute("data-heading", text);
+// });
+// }
+
+// x()
 
 /////////////// RENDER ALL THE DECKS ///////////////
 

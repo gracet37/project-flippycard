@@ -16,7 +16,7 @@ french = Deck.create(category: "French", user_id: user_one.id, score: 0, img_url
 japanese = Deck.create(category: "Japanese", user_id: user_one.id, score: 0, img_url: "https://thumbs.dreamstime.com/b/vector-illustration-japanese-language-national-flag-japan-two-hand-drawn-doodle-speech-bubbles-written-name-109521191.jpg")
 maori = Deck.create(category: "Maori", user_id: user_one.id, score: 0, img_url: "https://thumbs.dreamstime.com/z/vector-illustration-cartoon-character-saying-hello-welcome-maori-vector-illustration-cartoon-character-saying-hello-117720184.jpg")
 romanian = Deck.create(category: "Romanian", user_id: user_one.id, score: 0, img_url: "https://st4.depositphotos.com/5966606/19761/v/1600/depositphotos_197616634-stock-illustration-vector-illustration-cartoon-character-saying.jpg")
-nzslang = Deck.create(category: "Bonus: NZ Slang", user_id: user_one.id, score: 0, img_url: "https://rlv.zcache.co.nz/yeah_nah_new_zealand_slang_t_shirt-rd29743e506de47e1bef61002343c49b2_65yeg_307.jpg?rvtype=content")
+nzslang = Deck.create(category: "Bonus: NZ Slang", user_id: user_one.id, score: 0, img_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRacc5fIas18x05fD1Kn4RzsnoLk9U9OnGBJe1Kj6DpXNfQWs-M")
 
 
 
