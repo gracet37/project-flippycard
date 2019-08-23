@@ -1,12 +1,15 @@
-/* Play page boxes */
-
 .body {
-  background-color: #f9f6f2;
+  width: 100%;
+  height: 100%;
+  max-height: 100%;
+  margin: 0;
+  padding: 0;
+  background-image: url('img/IMAG0360.jpg');
+  background-size:100% 100%;
+  background-repeat: no-repeat;
+  /* background-color: #0F1652; */
+  background-image: url("https://i.pinimg.com/originals/cb/1f/6f/cb1f6ff0578be1efcc7828530a1ce95f.jpg")
 }
-/* 
-main {
-  background-color: #E9E9E9;
-} */
 
 .wrapper {
     display: grid;
@@ -25,27 +28,21 @@ main {
 }
 
 .navbar {
-  background-color: #099a97;
+  background-color: #0F1652;
 }
 
 .deck-card {
-  width: 25em;
-  height: 23em;
+  width: 18em;
+  height: 18em;
+  /* border-radius: 25px; */
+  text-align: center;
+  margin: auto;
 }
 
 h3 {
   text-align: center;
-  font-family: 'Assistant', sans-serif;
+  font-family: 'Quicksand', sans-serif;
 }
-
-
-/* .box {
-    background-color: #444;
-    color: #fff;
-    border-radius: 5px;
-    padding: 20px;
-    font-size: 150%;
-}  */
 
 .flip-card {
     background-color: #DDDDDD;
@@ -78,20 +75,27 @@ h3 {
     height: 100%;
     backface-visibility: hidden;
     border-radius: 25px;
+    /* font-size: 20px */
   }
   
   .flip-card-front {
-    text-align: center;
-    background-color: #099a97;
-    color: #DDDDDD;
+    background-color: #0F1652;
+    color: white;
     border-radius: 25px;
+    text-align: center;
   }
   
   .flip-card-back {
-    background-color: #15cda8;
+    background-color: #89CBC1;
     color: white;
     transform: rotateY(180deg);
     border-radius: 25px;
+    /* margin: 10px; */
+  }
+
+  h4 {
+    font-size: 50px;
+    /* margin-top: 30px; */
   }
 
   .complete-button {
@@ -101,7 +105,8 @@ h3 {
     text-align: center;
     padding: 0;
     border-radius: 50%;
-    background-color: #282055;
+    background-color: #0F1652;
+    color: white;
   }
 
   .delete-button {
@@ -111,7 +116,8 @@ h3 {
     text-align: center;
     padding: 0;
     border-radius: 50%;
-    background-color: #282055;
+    background-color: #7482A4;
+    color: white;
   }
 
 p {
@@ -122,15 +128,13 @@ p {
 /* CARDS */
 
 .card {
-    /* display: grid;
-    grid-template-columns: 50% 50%;
-    grid-gap: 20px; */
     color: #444;
     margin: 30px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    border-radius: 25px;
     transition: 0.3s;
-    width: 400px;
-    height: 400px;
+    width: 350px;
+    height: 350px;
 }
 
   
@@ -223,9 +227,9 @@ padding: 2px 16px;
 
 
 .button {
-  background-color: #ddd;
+  background-color: #7C879B;
   border: none;
-  color: black;
+  color: white;
   padding: 10px 20px;
   text-align: center;
   text-decoration: none;
@@ -237,7 +241,7 @@ padding: 2px 16px;
 }
 
 .color-button {
-  background-color: #FFD700;
+  background-color: #ff8a5c;
   border: none;
   color: white;
   padding: 10px 20px;
@@ -252,16 +256,21 @@ padding: 2px 16px;
 
 .learn {
   text-align: center;
-  font-family: 'Noto Sans', sans-serif;
+  font-family: 'Quicksand', sans-serif;
   font-size: 70px;
-
+  color: white;
+  font-weight: 900;
 }
 
 h2 {
   text-align: center;
-  font-family: 'Noto Sans', sans-serif;
-  font-size: 89px;
-
+  font-family: 'Quicksand', sans-serif;
+  /* font-size: 200px; */
+}
+h1 {
+  text-align: center;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 100px;
 }
 
 .top-bar {
@@ -277,6 +286,7 @@ h2 {
   margin-top: 10px;
   margin-bottom: 10px;
   padding: 20px 20px;
+  
 }
 
 /* /////////////////// FORM ///////////////////// */
@@ -308,13 +318,9 @@ input[type=submit]:hover {
 
 .add-card {
   border-radius: 5px;
-  /* background-color: #f2f2f2; */
   padding: 20px;
   width: 40%;
-  /* text-align: center;
-  display: inline-block; */
 }  
-
 
 .button-all {
   border-radius: 4px;
@@ -358,7 +364,7 @@ input[type=submit]:hover {
 
 .button-inc {
   border-radius: 4px;
-  background-color: #9764c7;
+  background-color: #7A82A0;
   border: none;
   color: #FFFFFF;
   text-align: center;
@@ -398,4 +404,34 @@ input[type=submit]:hover {
 .form-container {
   text-align: center;
   display: inline-block;
+}
+
+/* .lang-span { */
+  /* font-family: 'Permanent Marker'; */
+  /* font-size: 80px; */
+  /* font-family: 'Poiret One'; */
+  /* color: #f2f6f5; */
+/* } */
+
+.first-head {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 400px;
+  text-align: center;
+  padding: 40px;
+  color: white
+
+  /* color: #f2f6f5; */
+}
+
+.flip-front-text {
+  margin-right: 10px; 
+  margin-left: 10px; 
+  margin-top: 2em; 
+}
+
+.flip-back-text {
+  margin-right: 20px; 
+  margin-left: 20px; 
+  margin-top: 2em; 
+  font-size: 30px;
 }
