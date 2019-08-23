@@ -2,12 +2,12 @@
   width: 100%;
   height: 100%;
   max-height: 100%;
+  text-align: center;
   margin: 0;
   padding: 0;
   background-image: url('img/IMAG0360.jpg');
   background-size:100% 100%;
   background-repeat: no-repeat;
-  /* background-color: #0F1652; */
   background-image: url("https://i.pinimg.com/originals/cb/1f/6f/cb1f6ff0578be1efcc7828530a1ce95f.jpg")
 }
 
@@ -34,7 +34,6 @@
 .deck-card {
   width: 18em;
   height: 18em;
-  /* border-radius: 25px; */
   text-align: center;
   margin: auto;
 }
@@ -90,12 +89,10 @@ h3 {
     color: white;
     transform: rotateY(180deg);
     border-radius: 25px;
-    /* margin: 10px; */
   }
 
   h4 {
     font-size: 50px;
-    /* margin-top: 30px; */
   }
 
   .complete-button {
@@ -137,7 +134,6 @@ p {
     height: 350px;
 }
 
-  
 .card:hover {
 box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
@@ -265,7 +261,6 @@ padding: 2px 16px;
 h2 {
   text-align: center;
   font-family: 'Quicksand', sans-serif;
-  /* font-size: 200px; */
 }
 h1 {
   text-align: center;
@@ -320,6 +315,7 @@ input[type=submit]:hover {
   border-radius: 5px;
   padding: 20px;
   width: 40%;
+  line-height: 1;
 }  
 
 .button-all {
@@ -401,26 +397,22 @@ input[type=submit]:hover {
   right: 0;
 }
 
-.form-container {
-  text-align: center;
+.add-card {
   display: inline-block;
+  
 }
 
-/* .lang-span { */
-  /* font-family: 'Permanent Marker'; */
-  /* font-size: 80px; */
-  /* font-family: 'Poiret One'; */
-  /* color: #f2f6f5; */
-/* } */
+.lang-span { 
+  font-size: 110px;
+  color: #f2f6f5;
+}
 
 .first-head {
   font-family: 'Quicksand', sans-serif;
   font-size: 400px;
   text-align: center;
-  padding: 40px;
+  padding-top: 25px;
   color: white
-
-  /* color: #f2f6f5; */
 }
 
 .flip-front-text {

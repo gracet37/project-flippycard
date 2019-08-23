@@ -1,4 +1,4 @@
-/// CREATE DISPLAY FOR USER and their DECKS
+/////////// CREATE LINKS //////////////
 
 const USER_URL = "http://localhost:3000/users"
 const DECK_URL = "http://localhost:3000/decks"
@@ -11,7 +11,7 @@ const topBar = document.querySelector('.top-bar')
 const wrapper = document.querySelector('.wrapper')
 const midBar = document.querySelector('.mid-bar')
 
-///////////// FETCH A USERS DECK /////////////////
+/////////////// FETCH A USERS DECK /////////////////
 
 const fetchData = () => {
 fetch('http://localhost:3000/users')
@@ -22,26 +22,22 @@ fetch('http://localhost:3000/users')
 ///////////// RENDER THE PAGE AFTER USER SELECTS THEIR LANGUAGE  ///////////////
 
 const renderHeader = (deck) => {
-    // const headerDiv = document.createElement('div')
-    // headerDiv.id = 'header-div'
+    const firstHead = document.querySelector('.first-head')
+    firstHead.innerHTML = " "
+    firstHead.innerHTML = `<h1>Flippy Cards</h1>`
+
     const h1 = document.createElement('h1')
     h1.className = 'learn clear'
-    // h1.className = "magic"
-    h1.innerHTML = `<span contenteditable data-heading="Magic" class="lang-span">${deck.category.toUpperCase()}</span>`
+    h1.innerHTML = `<span class="lang-span">${deck.category.toUpperCase()}</span>`
     
     const scoreDiv = document.createElement('div')
     const h2 = document.createElement('h2')
     h2.className = 'score clear'
     h2.innerHTML = `Score: ${deck.score}`
-    // const score = document.querySelector(".score")
     const p = document.createElement('p')
     scoreDiv.append(h2, p)
-    // const headerDiv = document.querySelector("#header-div")
-    // headerDiv.appendChild(score)
 
     headerDiv.append(h1, scoreDiv)
-
-
 }
 
     // const playButton = document.createElement('button')
