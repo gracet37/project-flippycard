@@ -1,10 +1,9 @@
-/////////////// RENDER ALL THE CARDS FOR ONE DECK ///////////////
+/////////////// CREATE ALL BUTTONS ///////////////
 
 // 1. Fetch all the cards from the deck
 const options = (deck) => {
     const topBar = document.querySelector(".top-bar")
     const midBar = document.querySelector(".mid-bar")
-
 
     const incBtn = document.createElement('button')
     incBtn.className = "button-inc"
@@ -32,33 +31,16 @@ const options = (deck) => {
     showCardContainer(createButton)
 
     midBar.append(createButton)
-
-
-
 }
 
-////// ????? Need help - how to interlink this with the items defined in homepage.js ??????????????????????
-
-// const playFunction = () => {
-//     playBtn.addEventListener("click", (event) => {
-//             let deckId = event.target.id
-//             document.querySelector('main').innerHTML = " "
-//             allFetch(deckId)
-//     })
-// }
-
-
+//////////////////////// FETCH ALL CARDS //////////////////////////
 const allFetch = (id) => {
-    // console.log("Hello")
     fetch(`${DECK_URL}/${id}`)
         .then(res => res.json())
         .then(deck => {
             renderAllCards(deck)
-            // console.log(deck)
     })
 }
-
-// allFetch(2)
 
 ////////////////////////FETCH SCORE//////////////////////////////
 const scoreFetch = (id) => {
@@ -68,18 +50,8 @@ const scoreFetch = (id) => {
             renderScore(deck)
     })
 }
-////////////////////////// RENDER SCORE ////////////////////////////
 
-// const renderScore = (deck) => {
-//     const h1 = document.createElement('h1')
-//     h1.innerText = `Score: ${deck.score}`
-//     const score = document.querySelector(".score")
-//     const p = document.createElement('p')
-//     score.append(h1, p)
-//     const headerDiv = document.querySelector("#header-div")
-//     headerDiv.appendChild(score)
-// }
-///////////////// UPDATE SCORE////////////////////////////////
+////////////////////////// UPDATE SCORE////////////////////////////////
 
 function isIncomplete(card) {
     return card.complete === false;
@@ -98,6 +70,8 @@ const incompleteFetch = (id) => {
     })
 }
 
+////////////////////////// RENDER INCOMPLETE CARDS /////////////////////////
+
 const renderIncomplete = (cards) => {
     cards.forEach(card => {
         const wrapper = document.querySelector('.wrapper')
@@ -106,10 +80,10 @@ const renderIncomplete = (cards) => {
         playDiv.innerHTML = `<div class="flip-card">
                                 <div class="flip-card-inner">
                                 <div class="flip-card-front" id="rcorners1">
-                                     <h4>${card.foreign}</h4> 
+                                    <h4 class="flip-front-text">${card.foreign}</h4> 
                                 </div>
                                 <div class="flip-card-back" id="rcorners1">
-                                    <h4>${card.english}</h4> 
+                                    <h4 class="flip-back-text">${card.english}</h4> 
                                     <button type="button" class="complete-button" id=${card.id}>Got it!</button> 
                                     <button type="button" class="delete-button" id=${card.id}>Delete</button> 
                                 </div>
@@ -119,7 +93,7 @@ const renderIncomplete = (cards) => {
         wrapper.appendChild(playDiv)   
 
         const completeBtn = playDiv.querySelector(".complete-button")
-        const incompleteBtn = document.querySelector(".incomplete-button")
+        // const incompleteBtn = document.querySelector(".incomplete-button")
 
         completeBtn.addEventListener("click", (event) => {
             event.preventDefault()
@@ -139,8 +113,10 @@ const renderIncomplete = (cards) => {
     })
 }
 
+//////////////////// RENDER ALL CARDS /////////////////////
+// create a new card and the hover card each manually
+
 const renderAllCards = (deck) => {
-    // create a new card and the hover card each manually
     deck.cards.forEach(card => {
         const wrapper = document.querySelector('.wrapper')
         const playDiv = document.createElement('div')
@@ -173,11 +149,6 @@ const renderAllCards = (deck) => {
                 } 
               })
             
-            // console.log(event.target.innerText)
-            // fetch(`${CARDS_URL}/${cardId}`, {
-            //     method: "DELETE"
-            // }).then(event.target.parentElement.parentElement.parentElement.remove())
-
         const completeBtn = playDiv.querySelector(".complete-button")
 
         completeBtn.addEventListener("click", (event) => {
@@ -190,8 +161,6 @@ const renderAllCards = (deck) => {
                 p.innerHTML = '';
             }, 2000);
 
-            // try {
-            // const score = await 
             fetch(`http://localhost:3000/decks/${deck.id}`, {
                 method: "PATCH",
                 headers: {
@@ -202,57 +171,26 @@ const renderAllCards = (deck) => {
                     score: deck.score
                 })
             })
-            // .then(res => res.json())
-            // .then(console.log)
             .then(data => {
                 document.querySelector('.score').innerHTML = `<h2>Score: ${deck.score}</h2>`
+            })
 
+                fetch(`http://localhost:3000/cards/${targetId}`, {
+                method: "PATCH",
+                headers: {
+                    "Content-Type": 'application/json',
+                    "Accept": 'application/json'
+                },
+                body: JSON.stringify({
+                    complete: true
+                })
             })
             
-            // .then(res => res.json()).then(data => {
-            //     document.querySelector('h1').innerHTML = " "
-            //     scoreFetch(data)
-            // })
-        
             event.target.parentNode.parentNode.parentNode.style.display = "none"
-            
-            // const complete = await fetch(`http://localhost:3000/cards/${targetId}`, {
-            //     method: "PATCH",
-            //     headers: {
-            //         "Content-Type": 'application/json',
-            //         "Accept": 'application/json'
-            //     },
-            //     body: JSON.stringify({
-            //         complete: true
-            //     })
-            // })
-            // catch (err) {console.error(err)}
         })
     })
 }
 
 
-
-
-
-
-    
-//     function isComplete(card) {
-//         return card.complete === true;
-//     }
-
-    
-    ///////////////////////////////////TOP SCREEN BUTTONS ////////////////////////////////////////
-    
-    // const navBar = document.querySelector(".nav-bar")
-    // const exitBtn = document.createElement('button')
-    // exitBtn.innerText = "Go Back"
-    
-    // navBar.append(exitBtn)
-    
-
-    ////////////////////////////////////////////////////
-     
-    
 
 

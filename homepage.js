@@ -40,29 +40,6 @@ const renderHeader = (deck) => {
     headerDiv.append(h1, scoreDiv)
 }
 
-    // const playButton = document.createElement('button')
-    // playButton.id = deck.id
-    // playButton.className = 'button-play'
-    // playButton.innerHTML = `<span>Test Yourself!</span>`
-    // playButton.addEventListener("click", () => {
-    //     // console.log("kj")
-    //     allFetch(deck.id)
-    // })
-
-    // const homeButton = document.createElement('button')
-    // homeButton.id = deck.id
-    // homeButton.className = 'button-home'
-    // homeButton.innerHTML = `<span>Go Back to All Languages</span>`
-
-////////////////// NEEDS UPDATING /////////////////////////
-    // homeButton.addEventListener("click", (event) => {
-    //     event.preventDefault()
-    //     // document.querySelector('main').innerHTML = " "
-    //     fetchData()
-    // })
-
-
-
 ///////////// ADD NEW CARD FETCH POST //////////////
 
 const addNewCard = (deck) => {
@@ -86,19 +63,7 @@ const addNewCard = (deck) => {
     .then(res => res.json())
 }
 
-// const x = () => {
-// var span = document.querySelector("span");
-
-// span.addEventListener("input", function() {
-// 	var text = this.innerText;
-// 	this.setAttribute("data-heading", text);
-// 	this.parentElement.setAttribute("data-heading", text);
-// });
-// }
-
-// x()
-
-/////////////// RENDER ALL THE DECKS ///////////////
+/////////////// RENDER ALL THE LANGUAGE DECKS AND THEIR CARDS  ///////////////
 
 const renderAllDecks = (user) => {
     user.decks.forEach(deck => {
@@ -109,11 +74,8 @@ const renderAllDecks = (user) => {
         button.innerText = deck.category
         
         button.addEventListener("click", (e) => {
-            // console.log(button)
             event.preventDefault()
-            // const buttons = document.getElementsByClassName('button')
-            // buttons.className = 'button'
-            // button.style.backgroundColor = "#EDEAE5"
+
             let arr = []
             e.target.className = 'color-button'
             arr.forEach.call(document.querySelectorAll('button'), function(b) {
@@ -121,7 +83,6 @@ const renderAllDecks = (user) => {
                     b.className = 'button'
                 }
             })
-            // e.target.className = 'color-button'
             firstContainer.innerHTML = " "
             headerDiv.innerHTML = " "
             topBar.innerHTML = " "
@@ -129,9 +90,7 @@ const renderAllDecks = (user) => {
             midBar.innerHTML = " "
             renderHeader(deck)
             options(deck)
-            // renderScore(deck)
             allFetch(deck.id)
-            // secondContainer.innerHTML = " "
         })
 
         navB.append(button)
@@ -155,7 +114,7 @@ const renderAllDecks = (user) => {
 }
 
 
-///////////////////////////// MATT's CREATE FORM ////////////////////////////////
+///////////////////////////// CREATE FORM ////////////////////////////////
 const formContainer = document.querySelector('.form-container')
 
 let addCard = false
@@ -187,7 +146,6 @@ const getLangs = () => {
 
 const displayLangs = (decks) => {
     decks.forEach(lang => {
-        // console.log(lang)
         let langId = document.createElement('option')
             langId.value = lang.id
             langId.innerText = lang.category
@@ -213,17 +171,17 @@ newCardForm.addEventListener('submit', (event)=>{
             foreign: foreignInput.value,
             deck_id: languageSelection,
             complete: false
-            // needs to be updated successfully
         })
     })
     .then(resp => resp.json())
     .then(card => {
         document.querySelector('.wrapper').innerHTML = " "
+        foreignInput.value = " "
+        englishInput.value = " "
         allFetch(card.deck_id)
     })
 })
 
 
 ////////////// FUNCTION CALLS ////////////////
-// getLangs()
 fetchData()
